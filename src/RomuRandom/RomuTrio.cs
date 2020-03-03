@@ -57,14 +57,11 @@ namespace RomuRandom
 			_yState = BitOperations.RotateLeft(_yState, 12);
 			 _zState = BitOperations.RotateLeft(_zState, 44);
 #else
+			static ulong RotateLeft(ulong value, int offset) => (value << offset) | (value >>(64 - offset));
 			_yState = RotateLeft(_yState, 12);
 			 _zState = RotateLeft(_zState, 44);
 #endif
 			return xp;
-
-#if NETSTANDARD1_0
-			static ulong RotateLeft(ulong value, int offset) => (value << offset) | (value >>(64 - offset));
-#endif
 		}
 
 		ulong _xState;
