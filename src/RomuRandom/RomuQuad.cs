@@ -45,6 +45,19 @@ namespace RomuRandom
 		}
 
 		/// <summary>
+		/// Initializes a new instance of <see cref="RomuQuad"/> with the specified seeds.
+		/// </summary>
+		public RomuQuad(ulong seed1, ulong seed2, ulong seed3, ulong seed4)
+		{
+			if (seed1 == 0 && seed2 == 0 && seed3 == 0 && seed4 == 0)
+				throw new ArgumentOutOfRangeException(nameof(seed1), "At least one seed must be non-zero.");
+			_wState = seed1;
+			_xState = seed2;
+			_yState = seed3;
+			_zState = seed4;
+		}
+
+		/// <summary>
 		/// Implements <code>romuQuad_random</code> from <a href="http://romu-random.org/code.c">romu-random.org</a>.
 		/// </summary>
 		public ulong Next()

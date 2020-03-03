@@ -35,5 +35,21 @@ namespace RomuRandom.Tests
 			Assert.Equal(9712990932255882571ul, romu.Next());
 			Assert.Equal(11298847356842188120ul, romu.Next());
 		}
+
+		[Fact]
+		public void FourSeeds()
+		{
+			var romu = new RomuQuad(1, 2,3, 4);
+			Assert.Equal(2ul, romu.Next());
+			Assert.Equal(4503599627370500ul, romu.Next());
+			Assert.Equal(15187511025750758165ul, romu.Next());
+			Assert.Equal(14994429473373881959ul, romu.Next());
+			Assert.Equal(4552565341231374125ul, romu.Next());
+			Assert.Equal(18035035012574374668ul, romu.Next());
+			Assert.Equal(1730100196680423838ul, romu.Next());
+			Assert.Equal(6504681700816491977ul, romu.Next());
+			Assert.Equal(16223105444287774094ul, romu.Next());
+			Assert.Equal(13586108397339980565ul, romu.Next());
+		}
 	}
 }

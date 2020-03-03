@@ -1,12 +1,12 @@
 // Copyright 2020 Mark A. Overton
 // Copyright 2020 Bradley Grainger
-// 
+//
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
-// 
+//
 //     https://www.apache.org/licenses/LICENSE-2.0
-// 
+//
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -42,6 +42,18 @@ namespace RomuRandom
 			if (seed == 0)
 				throw new ArgumentOutOfRangeException(nameof(seed), "seed must not be zero");
 			_zState = unchecked((ulong) seed);
+		}
+
+		/// <summary>
+		/// Initializes a new instance of <see cref="RomuTrio"/> with the specified seeds.
+		/// </summary>
+		public RomuTrio(ulong seed1, ulong seed2, ulong seed3)
+		{
+			if (seed1 == 0 && seed2 == 0 && seed3 == 0)
+				throw new ArgumentOutOfRangeException(nameof(seed1), "At least one seed must be non-zero.");
+			_xState = seed1;
+			_yState = seed2;
+			_zState = seed3;
 		}
 
 		/// <summary>
