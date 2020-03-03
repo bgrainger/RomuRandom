@@ -49,18 +49,15 @@ namespace RomuRandom
 		/// </summary>
 		public ulong Next()
 		{
-			ulong xp = _xState, yp = _yState, zp = _zState;
-			_xState = 15241094284759029579u * zp;
-			_yState = yp - xp; 
+			ulong xp = _xState;
+			_xState = 15241094284759029579u * _zState;
+			_zState -= _yState;
+			_yState -= xp;
 #if !NETSTANDARD1_0
 			_yState = BitOperations.RotateLeft(_yState, 12);
-#else
-			_yState = RotateLeft(_yState, 12);
-#endif
-			_zState = zp - yp;
-#if !NETSTANDARD1_0
 			 _zState = BitOperations.RotateLeft(_zState, 44);
 #else
+			_yState = RotateLeft(_yState, 12);
 			 _zState = RotateLeft(_zState, 44);
 #endif
 			return xp;
