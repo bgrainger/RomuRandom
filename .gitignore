@@ -1,0 +1,15 @@
+# ignore output folders
+bin/
+build/
+obj/
+packages/
+
+# ignore user-specific options/cache files
+project.lock.json
+_ReSharper.*
+TestResult.xml
+Thumbs.db
+*.user
+*.sln.cache
+*.suo
+.vs/
