@@ -46,10 +46,7 @@ namespace RomuRandom
 		/// Returns a non-negative random integer.
 		/// </summary>
 		/// <returns>A 32-bit signed integer that is greater than or equal to 0 and less than <see cref="int.MaxValue"/>.</returns>
-		public override int Next()
-		{
-			return GenerateNext(0, int.MaxValue);
-		}
+		public override int Next() => GenerateNext(0, int.MaxValue);
 
 		/// <summary>
 		/// Returns a non-negative random integer that is less than the specified maximum.
@@ -61,8 +58,7 @@ namespace RomuRandom
 		{
 			if (maxValue < 0)
 				throw new ArgumentOutOfRangeException(nameof(maxValue), maxValue, "maxValue must be non-negative");
-			if (maxValue <= 1)
-				return 0;
+
 			return GenerateNext(0, maxValue);
 		}
 
@@ -120,6 +116,9 @@ namespace RomuRandom
 		private int GenerateNext(int minValue, int maxValue)
 		{
 			var range = (uint) ((long) maxValue - minValue);
+			if (range <= 1)
+				return minValue;
+
 			var threshold = ((uint) -range) % range;
 			while (true)
 			{
@@ -127,7 +126,7 @@ namespace RomuRandom
 				if (r >= threshold)
 				{
 					var value = unchecked((uint) (r % range));
-					return minValue + unchecked((int) value);
+					return unchecked((int) ((uint) minValue + value));
 				}
 			}
 		}
