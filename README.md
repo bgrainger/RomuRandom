@@ -3,7 +3,8 @@
 RomuRandom is a .NET implementation of the [Romu](http://romu-random.org/) family of
 random number generators.
 
-![Build Status](https://github.com/bgrainger/RomuRandom/workflows/Tests/badge.svg)
+[![Build Status](https://github.com/bgrainger/RomuRandom/workflows/Tests/badge.svg)](https://github.com/bgrainger/RomuRandom/actions)
+[![NuGet](https://img.shields.io/nuget/vpre/RomuRandom)](https://www.nuget.org/packages/RomuRandom)
 
 ## Usage
 
