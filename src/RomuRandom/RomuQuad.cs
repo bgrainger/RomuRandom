@@ -64,21 +64,21 @@ namespace RomuRandom
 		{
 			ulong wp = _wState, xp = _xState, yp = _yState, zp = _zState;
 			_wState = 15241094284759029579u * zp; // a-mult
-#if !NETSTANDARD1_0
+#if !NETSTANDARD1_0 && !NETSTANDARD2_0 && !NETSTANDARD2_1
 			_xState = zp + BitOperations.RotateLeft(wp, 52);           // b-rotl, c-add
 #else
 			_xState = zp + RotateLeft(wp, 52);           // b-rotl, c-add
 #endif
 			_yState = yp - xp;                    // d-sub
 			_zState = yp + wp;                    // e-add
-#if !NETSTANDARD1_0
+#if !NETSTANDARD1_0 && !NETSTANDARD2_0 && !NETSTANDARD2_1
 			_zState = BitOperations.RotateLeft(_zState,19);            // f-rotl
 #else
 			_zState = RotateLeft(_zState,19);            // f-rotl
 #endif
 			return xp;
 
-#if NETSTANDARD1_0
+#if NETSTANDARD1_0 || NETSTANDARD2_0 || NETSTANDARD2_1
 			static ulong RotateLeft(ulong value, int offset) => (value << offset) | (value >>(64 - offset));
 #endif
 		}

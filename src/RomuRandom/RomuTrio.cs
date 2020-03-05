@@ -65,7 +65,7 @@ namespace RomuRandom
 			_xState = 15241094284759029579u * _zState;
 			_zState -= _yState;
 			_yState -= xp;
-#if !NETSTANDARD1_0
+#if !NETSTANDARD1_0 && !NETSTANDARD2_0 && !NETSTANDARD2_1
 			_yState = BitOperations.RotateLeft(_yState, 12);
 			 _zState = BitOperations.RotateLeft(_zState, 44);
 #else

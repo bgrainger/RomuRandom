@@ -91,7 +91,7 @@ namespace RomuRandom
 				buffer[i] = unchecked((byte) _rng.Next());
 		}
 
-#if !NETSTANDARD1_0
+#if !NETSTANDARD1_0 && !NETSTANDARD2_0
 		/// <summary>
 		/// Fills the elements of a specified span of bytes with random numbers.
 		/// </summary>
