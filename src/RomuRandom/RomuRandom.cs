@@ -17,12 +17,12 @@ using System;
 namespace RomuRandom
 {
 	/// <summary>
-	/// Provides an implementation of <see cref="System.Random"/> that uses <see cref="Pcg32Single"/> to generate its random numbers.
+	/// Provides an implementation of <see cref="System.Random"/> that uses <see cref="RomuTrio"/> to generate its random numbers.
 	/// </summary>
 	public sealed class RomuRandom : Random
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="PcgRandom"/> class, using a time-dependent default seed value.
+		/// Initializes a new instance of the <see cref="RomuRandom"/> class, using a time-dependent default seed value.
 		/// </summary>
 		public RomuRandom()
 			: this(Environment.TickCount)
