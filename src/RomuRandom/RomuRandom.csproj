@@ -10,6 +10,7 @@
     <Description>.NET implementation of the Romu family of random number generators</Description>
     <Copyright>Copyright 2020 Bradley Grainger</Copyright>
     <Authors>Bradley Grainger</Authors>
+    <PackageReleaseNotes>Renamed namespace to "Romu"; improved performance.</PackageReleaseNotes>
     <PackageTags>romu;rng;random</PackageTags>
     <PackageProjectUrl>https://github.com/bgrainger/RomuRandom</PackageProjectUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
