@@ -1,3 +1,4 @@
+using Romu;
 using Xunit;
 
 namespace RomuRandom.Tests

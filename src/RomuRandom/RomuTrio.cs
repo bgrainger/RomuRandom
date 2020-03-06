@@ -18,7 +18,7 @@ using System;
 using System.Numerics;
 #endif
 
-namespace RomuRandom
+namespace Romu
 {
 	/// <summary>
 	/// Implements the "RomuTrio" generator from <a href="http://romu-random.org/">romu-random.org</a>.

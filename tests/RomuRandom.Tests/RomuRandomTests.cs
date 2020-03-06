@@ -85,6 +85,6 @@ namespace RomuRandom.Tests
 			Assert.Throws<ArgumentOutOfRangeException>(() => m_random.Next(2, 1));
 		}
 
-		Random m_random = new RomuRandom();
+		Random m_random = new Romu.RomuRandom();
 	}
 }

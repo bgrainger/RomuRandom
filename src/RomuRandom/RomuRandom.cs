@@ -14,7 +14,7 @@
 
 using System;
 
-namespace RomuRandom
+namespace Romu
 {
 	/// <summary>
 	/// Provides an implementation of <see cref="System.Random"/> that uses <see cref="RomuTrio"/> to generate its random numbers.
