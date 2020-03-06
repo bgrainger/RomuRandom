@@ -46,7 +46,15 @@ namespace Romu
 		/// Returns a non-negative random integer.
 		/// </summary>
 		/// <returns>A 32-bit signed integer that is greater than or equal to 0 and less than <see cref="int.MaxValue"/>.</returns>
-		public override int Next() => GenerateNext(0, int.MaxValue);
+		public override int Next()
+		{
+			while (true)
+			{
+				var r = _rng.Next();
+				if (r >= 4)
+					return unchecked((int)(r % int.MaxValue));
+			}
+		}
 
 		/// <summary>
 		/// Returns a non-negative random integer that is less than the specified maximum.
